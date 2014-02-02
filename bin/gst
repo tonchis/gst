@@ -9,7 +9,7 @@ SYNOPSIS
     To be compatible with gs, it uses a .gs directory and sets the GS_NAME variable.
 
 USAGE
-    Since gst is a script, env changes will not happen unless you source them.
+    Since gst is a script and runs in a child environment of your shell, the latter will not take the env changes unless you source them.
 
       $ gst init
       $ source gst in

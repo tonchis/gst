@@ -3,14 +3,14 @@ GST
 
 `gst` is like [gs](http://github.com/soveran/gs). The t is for Tonchis.
 
-TL;DR
------
+### TL;DR
+
 `gst` is a gemset manager inspired by [gs](http://github.com/soveran/gs).
 The difference is that it stays in the same shell and just modifies gem env variables.
 To be compatible with `gs`, it uses a `.gs` directory and sets the `GS_NAME` variable.
 
-USAGE
------
+### USAGE
+
 Since `gst` is a script and runs in a child environment of your shell, the latter will not take the env changes unless you `source` them.
 
 ```shell
@@ -19,8 +19,15 @@ $ source gst in
 $ source gst out
 ```
 
-COMMANDS
---------
+Protip: in bash, `.` is the same as `source`.
+
+You can also run commands in the gemset using `gst in` without sourcing. This will execute them in the proper gem contex but will not affect the current shell.
+
+```shell
+$ gst in gem env home
+```
+
+### COMMANDS
 
 ```shell
 init    Creates the .gs directory
@@ -28,8 +35,7 @@ in      Modifies GEM_HOME, GEM_PATH and PATH to use the .gs directory and sets t
 out     Restores the previous GEM_HOME, GEM_PATH and PATH. Also unsets GS_NAME.
 ```
 
-WHY?
-----
+### WHY?
 
 As I was using `gs` I noticed it wouldn't play well with `chruby`.
 

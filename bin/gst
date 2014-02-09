@@ -15,6 +15,12 @@ USAGE
       $ source gst in
       $ source gst out
 
+    Protip: in bash, \`.\` is the same as \`source\`.
+
+    You can also run commands in the gemset using `gst in` without sourcing. This will execute them in the proper gem contex but will not affect the current shell.
+
+      $ gst in gem env home
+
 COMMANDS
     init    Creates the .gs directory
     in      Modifies GEM_HOME, GEM_PATH and PATH to use the .gs directory and sets the GS_NAME variable.
@@ -22,7 +28,7 @@ COMMANDS
 EOF
 }
 
-if [[ "$#" -ne 1 ]]; then
+if [[ "$1" != "in" && "$#" -ne 1 ]]; then
   usage
   exit 1
 fi
@@ -36,7 +42,7 @@ case "$1" in
     GS_DIR="$(pwd)/.gs"
 
     if [[ ! -d $GS_DIR ]]; then
-      echo 'Directory .gs not found. Run `gst init` first.'
+      echo "Directory .gs not found. Run \`gst init\` first."
       exit 1
     fi
 
@@ -52,6 +58,8 @@ case "$1" in
     GEM_HOME=$GS_DIR
 
     export PATH GEM_PATH GEM_HOME GS_NAME
+
+    if [[ -n $2 ]]; then ${@:2}; fi
     ;;
   "out")
     if [[ -z $GS_NAME ]]; then return; fi

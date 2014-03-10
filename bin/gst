@@ -43,7 +43,7 @@ case "$1" in
 
     if [[ ! -d $GS_DIR ]]; then
       echo "Directory .gs not found. Run \`gst init\` first."
-      exit 1
+      return 1
     fi
 
     GST_OLD_PATH=$PATH

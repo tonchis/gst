@@ -35,6 +35,14 @@ in      Modifies GEM_HOME, GEM_PATH and PATH to use the .gs directory and sets t
 out     Restores the previous GEM_HOME, GEM_PATH and PATH. Also unsets GS_NAME.
 ```
 
+### INSTALLATION
+
+You just need to place `bin/gst` in your `PATH`. Here's a oneliner.
+
+```shell
+$ wget https://raw.githubusercontent.com/tonchis/gst/master/bin/gst && chmod +x gst && sudo mv gst /usr/local/bin
+```
+
 ### WHY?
 
 As I was using `gs` I noticed it wouldn't play well with `chruby`.

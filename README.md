@@ -37,7 +37,13 @@ out     Restores the previous GEM_HOME, GEM_PATH and PATH. Also unsets GS_NAME.
 
 ### INSTALLATION
 
-You just need to place `bin/gst` in your `PATH`. Here's a oneliner.
+With Homebrew
+
+```shell
+brew tap tonchis/goodies && brew update && brew install gst
+```
+
+And for the standalone version, here's a oneliner.
 
 ```shell
 $ wget https://raw.githubusercontent.com/tonchis/gst/master/bin/gst && chmod +x gst && sudo mv gst /usr/local/bin

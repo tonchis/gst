@@ -40,7 +40,7 @@ out     Restores the previous GEM_HOME, GEM_PATH and PATH. Also unsets GS_NAME.
 With Homebrew
 
 ```shell
-brew tap tonchis/goodies && brew update && brew install gst
+brew tap tonchis/goodies && brew install gst
 ```
 
 And for the standalone version, here's a oneliner.

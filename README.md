@@ -21,7 +21,7 @@ $ source gst out
 
 Protip: in bash, `.` is the same as `source`.
 
-You can also run commands in the gemset using `gst in` without sourcing. This will execute them in the proper gem contex but will not affect the current shell.
+You can also run commands in the gemset using `gst in` without sourcing. This will execute them in the proper gem context but will not affect the current shell.
 
 ```shell
 $ gst in gem env home
